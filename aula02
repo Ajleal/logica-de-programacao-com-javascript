@@ -1,0 +1,65 @@
+<!--meta charset utf-8 é a questão de acentuação para brownsers
+no google chrome nao necessita, porém os demais é necessario utilizar 
+-->
+<meta charset="utf-8">
+<!-- script é a parte de programação, chama a parte document
+documento da aplicação, seguido de (.) write que é a parte da
+escrita e (); para finalizar podendo ser atribuido valor.-->
+
+<!-- Comando ".toFixed(valor)fixa ou transforma valor float(flutuante/moeda) em valor (real) casas decimais irão ser 
+apresentadas,  .replace() informa a troca de um ('.') para o outro (',') "-->
+
+<!-- "function" =  chama a função  || "return" retorna a variavel desejada         -->
+<script>
+    //[ERRO]NaN = Not a Number ( não é um número)
+    let sapatoValor = 2;
+    let onibusValor = 4;
+    let uberValor = 12.40;
+    let uberValorReal = transformaMoedaReal(uberValor);
+    let total = somaTotalMeiosDeTransporte();
+    let media = calculaMediaTransporte();
+
+    function transformaMoedaReal(valorEmFloat){
+       return 'R$'+ valorEmFloat.toFixed(2).replace('.',',');
+    }
+    
+    function transformaParaFloat(valorEmMoeda){
+      return parseFloat(valorEmMoeda.replace(',' , '.').replace('R$', '')) // 20.40 
+        
+
+    }
+
+
+    function somaTotalMeiosDeTransporte(){  
+        let total = sapatoValor + onibusValor + uberValor;
+        return transformaMoedaReal(total);
+    }
+    
+    function calculaMediaTransporte(){
+        let totalFloat = transformaParaFloat(total);
+        let media =  totalFloat/3;
+        
+        return transformaMoedaReal(media);
+
+    }
+
+    function imprimeResumoNaTela (){ 
+
+    document.write('<h1> Meio com o menor preço para ir no parque 13 de maio (AULA 02)</h1>');
+
+    document.write('<p>sapato - ' + sapatoValor  + '</p>');
+    document.write('<p>Ônibus - '+ onibusValor + '</p>');
+    document.write('<p>Uber - ' + uberValorReal + '</p>');
+    
+
+
+    document.write('<p> Total - ' + total + '</p>');
+    document.write('<p> Média - ' + media + '</p>');
+    
+    }
+    imprimeResumoNaTela();
+
+    document.write ('<br />')
+    document.write ('<p> VÁ AO PARQUE </p>');
+
+    
