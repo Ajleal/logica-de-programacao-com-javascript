@@ -1,0 +1,26 @@
+
+<meta charset="utf-8">
+
+<script>
+    
+
+    let sapatoValor = 2;
+    let onibusValor = 3;
+    let uberValor = 13.40;
+    let uberValorReal = uberValor.toFixed(2).replace('.',',');
+    let total = sapatoValor + onibusValor + uberValor;
+    let media = total/3;
+    
+
+    document.write('<h1> Meio com o menor preço para ir no parque 13 de maio</h1>');
+
+    document.write('<p>sapato R$ ' + sapatoValor  + ',00</p>');
+    document.write('<p>Ônibus R$'+ onibusValor + ',00</p>');
+    document.write('<p>Uber - R$' + uberValorReal + '</p>');
+
+
+    document.write('<p> Total - ' + total + '</p>');
+    document.write('<p> Média - ' + media + '</p>');
+
+</script>
+
