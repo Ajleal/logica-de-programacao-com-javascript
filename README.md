@@ -1,2 +1,2 @@
-# logica-de-programacao-com-javascript
+#javascript
 I'm not a NERD. I'm just smarter than you !
